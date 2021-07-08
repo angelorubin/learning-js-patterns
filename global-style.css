@@ -1,0 +1,9 @@
+* {
+  font-family: Verdana, sans-serif;
+}
+
+pre {
+  padding: 1rem;
+  font-size: 0.8rem;
+  background-color: lightgray;
+}

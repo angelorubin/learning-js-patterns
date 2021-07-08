@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padrões Javascript - Singleton</title>
+    <link rel="stylesheet" type="text/css" href="../../global-style.css"></link>
+  </head>
+  <body>
+    <h2>Padrões Javascript</h2>
+    <h3>Singleton</h3>
+    <p>
+      A ideia do padrão singleton é ter apenas uma instância de uma classe
+      específica.
+    </p>
+    <p>
+      Isso significa que na segunda vez que você usar a mesma classe para criar
+      um novo objeto, deverá obter o mesmo objeto que foi criado na primeira
+      vez.
+    </p>
+    <p>
+      E como isso se aplica ao JavaScript? Em JavaScript não existem classes,
+      apenas objetos. Quando você cria um novo objeto, na verdade não há nenhum
+      outro objeto como ele, e o novo objeto já é um singleton. Criar um objeto
+      simples usando um objeto literal, também é um exemplo de singleton:
+    </p>
+
+<pre>
+let obj = {
+  myprop: "my value",
+};
+</pre>
+
+		<p>
+			Em JavaScript, os objetos nunca são iguais, a menos que sejam o mesmo objeto, então, mesmo que você crie um objeto 
+			idêntico com os mesmos membros, ele não será igual ao primeiro:
+		</p>
+
+<pre>
+let obj2 = {
+	myprop: "my value",
+}
+
+obj === obj2; // false
+
+obj == obj2; // false
+</pre>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
