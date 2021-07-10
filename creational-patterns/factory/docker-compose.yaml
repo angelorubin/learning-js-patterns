@@ -13,8 +13,8 @@ services:
   postgres-db:
     image: postgres
     restart: always
-    environment:
-      POSTGRES_PASSWORD: root
+    env_file:
+      - .env
     networks:
       - db-net
     ports:

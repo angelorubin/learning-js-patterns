@@ -1,18 +1,15 @@
+require("dotenv").config();
 const DbFactory = require("./utils/DbFactory");
 
 const dbFactory = new DbFactory();
 
-const pgConnection = dbFactory.createConnection({
+const pgConn = dbFactory.createConnection({
 	type: "postgres",
-	host: "127.0.0.1",
+	host: process.env.PG_HOST,
 	port: "5432",
 	database: "postgres-db",
 	user: "postgres",
 	password: "root",
-});
-
-const pgConn = dbFactory.createConnection({
-	...pgConnection,
 });
 
 const pgDb = pgConn.connection();
