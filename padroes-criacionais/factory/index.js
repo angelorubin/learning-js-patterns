@@ -1,5 +1,6 @@
 const mysql = require("mysql2");
 
+/*
 const dbConnect = async () => {
 	try {
 		const connection = await mysql.createConnection({
@@ -21,20 +22,43 @@ const dbConnect = async () => {
 };
 
 dbConnect();
+*/
 
-/** 
+
 class MySql {
-	constructor({ url, user, password }) {
-		this.url = url;
+	constructor({ type, host, port, database, user, password }) {
+		this.type = type,
+		this.host = host;
+		this.port = port;
+		this.database = database;
+		this.user = user;
+		this.password = password;
+	}
+
+	connection(){
+		return mysql.createConnection({
+			host: this.host,
+			port: this.port,
+			database: this.database,
+			user: this.user,
+			password: this.password,
+		});
 	}
 }
 
 class Postgres {
-	constructor({ url, user, password }) {}
+	constructor({ type, host, port, database, user, password }) {
+		this.type = type,
+		this.host = host;
+		this.port = port;
+		this.database = database;
+		this.user = user;
+		this.password = password;
+	}
 }
 
 class DbConnectionFactory {
-	createConnectionType(options) {
+	createConnection(options) {
 		switch (options.type) {
 			case "mysql":
 				return new MySql({ ...options });
@@ -46,17 +70,4 @@ class DbConnectionFactory {
 	}
 }
 
-const dbConnectionFactory = new DbConnectionFactory();
-
-const mysqlConnection = dbConnectionFactory.createConnectionType({
-	type: "mysql",
-	url: "localhost:3000",
-});
-
-const postgresConnection = dbConnectionFactory.createConnectionType({
-	type: "postgres",
-});
-
-// console.log(mysqlConnection);
-
-*/
+module.exports = DbConnectionFactory
