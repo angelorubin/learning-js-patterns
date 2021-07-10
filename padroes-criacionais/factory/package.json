@@ -1,8 +1,10 @@
 {
 	"scripts": {
-		"nodemon": "nodemon users.js"
+		"nodemon": "nodemon --watch 'src/**/*'"
 	},
 	"dependencies": {
-		"mysql2": "^2.2.5"
+		"dotenv": "^10.0.0",
+		"mysql2": "^2.2.5",
+		"pg": "^8.6.0"
 	}
 }
