@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"nodemon": "nodemon --watch 'src/**/*'"
+		"nw": "nodemon nodemon.json"
 	},
 	"dependencies": {
 		"dotenv": "^10.0.0",
