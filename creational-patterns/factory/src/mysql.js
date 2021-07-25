@@ -7,7 +7,7 @@ const mysqlConn = dbFactory.createConnection({
   type: process.env.MYSQL_TYPE,
   host: process.env.MYSQL_HOST,
   port: process.env.MYSQL_PORT,
-  database: process.env.MYSQL_DATABASE,
+  database: process.env.MYSQL_DB,
   user: process.env.MYSQL_DB_USER,
   password: process.env.MYSQL_ROOT_PASSWORD,
 });
