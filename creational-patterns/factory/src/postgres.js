@@ -8,8 +8,8 @@ const pgConn = dbFactory.createConnection({
   host: process.env.PG_HOST,
   port: process.env.PG_PORT,
   database: process.env.PG_DATABASE,
-  user: process.env.PG_DB_USER,
-  password: process.env.PG_DB_PASSWORD,
+  user: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
 });
 
 const pgDb = pgConn.connection();
