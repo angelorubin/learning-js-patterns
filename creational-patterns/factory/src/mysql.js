@@ -1,9 +1,9 @@
 require("dotenv").config();
-const DbFactory = require("./db-conn-factory/index");
+const DbConnFactory = require("./db-conn-factory/index");
 
-const dbFactory = new DbFactory();
+const dbConnFactory = new DbConnFactory();
 
-const mysqlConn = dbFactory.createConnection({
+const mysqlConn = dbConnFactory.createConnection({
   type: process.env.MYSQL_TYPE,
   host: process.env.MYSQL_HOST,
   port: process.env.MYSQL_PORT,
@@ -12,9 +12,9 @@ const mysqlConn = dbFactory.createConnection({
   password: process.env.MYSQL_ROOT_PASSWORD,
 });
 
-const mysqlDb = mysqlConn.connection();
+const mysqlDB = mysqlConn.connection();
 
-mysqlDb.query("SELECT firstname FROM users", function (err, res) {
+mysqlDB.query("SELECT id FROM users", function (err, res) {
   if (err) {
     console.log(`ERROR: ${err}`);
   }

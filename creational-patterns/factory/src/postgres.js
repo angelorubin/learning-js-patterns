@@ -7,7 +7,7 @@ const pgConn = dbFactory.createConnection({
   type: process.env.PG_TYPE,
   host: process.env.PG_HOST,
   port: process.env.PG_PORT,
-  database: process.env.PG_DATABASE,
+  database: process.env.POSTGRES_DB,
   user: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
 });
