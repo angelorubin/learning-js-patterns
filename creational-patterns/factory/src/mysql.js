@@ -1,22 +1,17 @@
-require("dotenv").config();
+require("custom-env").env("my");
 const DbConnFactory = require("./db-conn-factory/index");
 
 const dbConnFactory = new DbConnFactory();
 
 const mysqlConn = dbConnFactory.createConnection({
-  type: process.env.MYSQL_TYPE,
-  host: process.env.MYSQL_HOST,
-  port: process.env.MYSQL_PORT,
-  database: process.env.MYSQL_DB,
-  user: process.env.MYSQL_DB_USER,
-  password: process.env.MYSQL_ROOT_PASSWORD,
+	type: process.env.MYSQL_TYPE,
+	host: process.env.MYSQL_HOST,
+	port: process.env.MYSQL_PORT,
+	database: process.env.MYSQL_DATABASE,
+	user: process.env.MYSQL_DB_USER,
+	password: process.env.MYSQL_DB_PASSWORD,
 });
 
-const mysqlDB = mysqlConn.connection();
+const mysql_db = mysqlConn.connection();
 
-mysqlDB.query("SELECT id FROM users", function (err, res) {
-  if (err) {
-    console.log(`ERROR: ${err}`);
-  }
-  console.log(`MySQL Data`, res);
-});
+module.exports = mysql_db;
