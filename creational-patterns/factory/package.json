@@ -1,8 +1,12 @@
 {
 	"scripts": {
-		"nw": "nodemon nodemon.json"
+		"docker-start": "docker compose up -d --remove-orphans --build",
+		"docker-stop": "docker compose down",
+		"dev": "nodemon src/index.js",
+		"docker-destroy": "docker system prune -a && docker volumes prune"
 	},
 	"dependencies": {
+		"custom-env": "^2.0.1",
 		"dotenv": "^10.0.0",
 		"mysql2": "^2.2.5",
 		"pg": "^8.6.0"
