@@ -1,0 +1,30 @@
+services:
+  my-db:
+    image: mysql:latest
+    env_file:
+      - .env.my
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-db-data:/var/lib/mysql
+
+  pg-db:
+    image: postgres:latest
+    restart: always
+    env_file:
+      - .env.pg
+    ports:
+      - 5432:5432
+    volumes:
+      - pg-db-data:/var/lib/postgres
+
+  adminer:
+    image: adminer:latest
+    env_file:
+      - .env.adminer
+    ports:
+      - 8080:8080
+
+volumes:
+  mysql-db-data:
+  pg-db-data:
