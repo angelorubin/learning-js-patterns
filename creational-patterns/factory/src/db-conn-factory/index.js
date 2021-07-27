@@ -41,6 +41,7 @@ class Postgres {
 			password: this.password,
 			database: this.database,
 		});
+		client.connect();
 		return client;
 	}
 }
