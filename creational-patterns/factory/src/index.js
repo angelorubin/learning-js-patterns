@@ -10,7 +10,7 @@ mysql_db.query("SELECT * FROM users", (err, res) => {
 
 pg_db.query("SELECT * FROM users", (err, res) => {
 	if (err) {
-		console.dir(`ERROR: ${err}`);
+		console.log(`ERROR: ${err}`);
 	}
-	console.dir(`Postgres Data`, res.rows[0]);
+	console.log(`Postgres Data`, res.rows[0]);
 });
