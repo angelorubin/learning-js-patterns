@@ -1,1 +1,5 @@
+node_modules
 .env
+.env.my
+.env.pg
+.env.adminer
