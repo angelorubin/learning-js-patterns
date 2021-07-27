@@ -1,4 +1,4 @@
-require("custom-env").config("pg");
+require("custom-env").env("pg");
 const DbConnFactory = require("./db-conn-factory/index");
 
 const dbConnFactory = new DbConnFactory();
