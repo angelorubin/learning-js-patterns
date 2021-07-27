@@ -1,13 +1,17 @@
 {
 	"restartable": "rs",
+	"colours": true,
+	"watch": ["src/index.js"],
+	"stdin": true,
 	"ignore": [".git", "node_modules/**/node_modules"],
 	"verbose": true,
 	"execMap": {
-		"js": "node --harmony"
+		"js": "node --inspect --harmony"
 	},
-	"watch": ["src/"],
+	"signal": "SIGUSR2",
+	"stdout": true,
 	"env": {
 		"NODE_ENV": "development"
 	},
-	"ext": "js json"
+	"ext": "js,json"
 }
