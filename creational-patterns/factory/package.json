@@ -2,8 +2,8 @@
 	"scripts": {
 		"docker-start": "docker compose up -d --remove-orphans --build",
 		"docker-stop": "docker compose down",
-		"dev": "nodemon src/index.js",
-		"docker-destroy": "docker system prune -a && docker volumes prune"
+		"docker-clear": "docker system prune -a && docker volumes prune",
+		"dev-start": "nodemon src/index.js"
 	},
 	"dependencies": {
 		"custom-env": "^2.0.1",
