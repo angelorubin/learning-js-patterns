@@ -2,7 +2,7 @@
 
 ## Sobre este projeto
 
-Este projeto visa em sua essência exemplificar alguns padrões de design com exemplos reais e úteis.
+Este projeto visa em sua essência exemplificar da forma mais objetiva possível alguns design patterns (padrões de design) com exemplos reais e úteis.
 
 Existem algumas categorias de Padrões de Design:
 
@@ -10,80 +10,108 @@ Existem algumas categorias de Padrões de Design:
 2. Comportamentais
 3. Estruturais
 
-Estas três categorias dividem-se em muitas sub-categorias e que por sua vez serão o foco deste projeto.
+Estas três categorias dividem-se em muitas sub-categorias e estas por sua vez serão o foco deste projeto.
 
-> Os exemplos deste repositório são construidos com base na linguagem Javascript, no entanto os Design Patterns são universais e podem ser aplicados a qualquer linguagem de programação.
+> Os exemplos deste repositório são construidos com base na linguagem Javascript, no entanto os Design Patterns são `universais` e podem ser aplicados a qualquer linguagem de programação.
 
 ## Requerimentos básicos
 
-Para executar os exemplos contidos neste repositório é preciso ter algumas ferramentas instaladas em seu sistema antes de começar:
+> O sistema operacional utilizado foi o Windows 10 com [WSL 2](https://docs.microsoft.com/pt-br/windows/wsl/install-win10). É necessário que a sua placa mãe tenha o suporte a [Virtualização](https://bit.ly/3iVvHZL) ativado.
 
-- [Git](https://www.atlassian.com/br/git/tutorials/install-git)
+Antes de executar os exemplos contidos neste repositório é preciso ter algumas ferramentas instaladas em seu sistema operacional:
+
 - [Node](https://nodejs.org/en/download)
-- [Docker](https://docs.docker.com/get-docker)
+- [Git](https://www.atlassian.com/br/git/tutorials/install-git)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
+- [Docker](https://docs.docker.com/get-docker)
 
 ## Padrões contidos no repositório
 
 1. Creational Patterns
    - Factory (Fábrica)
 
-## Como esta organizado o projeto
+## Como esta organizado este projeto
 
-Dentro da raíz do projeto exsitem 3 pastas principais:
+Na raíz do projeto exsitem 3 pastas principais:
 
 1. Creational Patterns
-2. Padrões Comportamentais
-3. Padrões Estruturais
+2. Behavioral Patterns
+3. Structural Patterns
 
-Cada pasta contém uma subpasta com o nome do padrão em questão com tudo (docker-compose, pacotes, variáveis de ambiente, README, libs (blibliotecas), etc) o que é necessário para rodar cada exemplo isoladamente.
+Cada pasta contém diversas subpastas com o nome do padrão com tudo (node_modules, docker-compose.yml, variáveis de ambiente, README, libs (blibliotecas), etc) o que é necessário para rodar cada exemplo individualmente.
 
 ## Iniciando
 
-Clone ou baixe o projeto para sua maquina.
+Primeiramente clone ou baixe o projeto para o seu computador.
 
-Para rodar o exemplo basta entrar na pasta e conferir o(s) comando(s) (scripts) criado(s) no arquivo package.json e executa-lo através do console.
+Feito isso, basta entrar na pasta e conferir o(s) comando(s) (scripts) criado(s) no arquivo `package.json` e executá-lo através do console.
 
-## Exemplo básico de uso
+## Exemplo de uso
 
-Abra o console e navegue até a pasta do padrão de design desejado com o seguinte comando:
+Abra o console de sua preferência e navegue até a pasta do design pattern desejado com o seguinte comando:
 
-`cd path/creational-patterns/factory`
+`cd your-project-path/creational-patterns/factory`
 
-3. Dentro da pasta observe se existe (note que nem nem todos os exemplos necessitam) um arquivo chamado docker-compose.yaml, caso exista é porque o exemplo exige que seja instalado algumas ferramentas antes do exemplo poder ser executado localmente.
+Dentro da pasta observe que se (note que nem nem todos os exemplos necessitam) um arquivo chamado docker-compose.yml, caso exista é porque o exemplo necessita que seja instalado algumas ferramentas antes de poder ser executado.
 
-> É preciso ter o docker instalado em sua maquina.
-> Para saber como baixar, instalar e configurar o docker veja mais detalhes [aqui](https://docs.docker.com/get-docker).
+> É preciso ter o Docker instalado em seu computador, como já citado anteriormente.
+> Para saber como baixar, instalar e configurar o Docker, deixo um link com mais detalhes [aqui](https://docs.docker.com/get-docker).
 
-3. Neste exemplo em específico é necessário ter em nosso container o MySQL, PostgreSQL e Adminer, e todos serão disponibilizados através de um container Docker.
+Neste exemplo em específico do padrão factory é necessário ter em nosso container Docker o banco de dados MySQL, o PostgreSQL e o painel Adminer.
+Todos eles serão disponibilizados através de apenas um container Docker.
 
-Caso precise saber mais sobre containers e Docker, deixo essa referência [aqui](https://www.meupositivo.com.br/panoramapositivo/container-docker).
+Caso queira saber mais sobre Docker e Conteinerização, deixo essa referência [aqui](https://www.meupositivo.com.br/panoramapositivo/container-docker).
 
-4. Neste exemplo de Factory Pattern eu abordo uma situação onde precisamos de um objeto de conexão com o banco de dados que seja flexível, pois podemos a mais de uma fonte de dados no projeto e poderemos até precisar trocar, adicionar ou remover conexões. É nesse tipo de situação onde podemos aplicar o Factory Pattern para facilitar as trocas e diminuir a repetição de código pelo projeto, teoricamente, sem muito sofrimento.
+Neste exemplo de Factory Pattern eu abordo uma situação muito comum onde precisamos de um objeto de conexão com o banco de dados que seja flexível, pois podemos ter mais de uma fonte de dados no projeto e podemos precisar trocar, adicionar ou remover essas conexões. É nesse tipo de situação onde podemos aplicar o Factory Pattern para facilitar as trocas e diminuir a repetição de código pelo projeto de forma organizada.
 
-5. Com o Docker devidamente instalado e rodando, o proximo passo é preencher as configurações (password e user) do arquivo .env-example encontrado na raíz do projeto.
+## Verificando o funcionamento do container Docker
 
-> DICA: O ideal é ter um arquivo .env principal no projeto de onde as variáveis de ambiente são controladas e centralizadas. Jamais envie o arquivo .env com dados sensíveis (senhas, etc) para o seu repositório. Coloque-o sempre no arquivo .gitignore. É necessario renomear o arquivo .env-example para .env para o projeto funcionar corretamente.
+Existe uma extensão para o VsCode que facilita a visualização do Docker. Ela pode ser encontrada [aqui]().
 
-6. Neste exemplo precisamos definir as configurações das variáveis de ambiente para os dois bancos (MySQ e PostgreSQL) encontrados no arquivo .env-example.
+Você também pode visualizar pelo console com o eguinte comando:
+
+`docker ps`
+
+Você deve ter um resultado semelhante a esse da imagem abaixo:
+
+![docker ps](https://i.imgur.com/Jfp6D9T.png)
+
+## Configurando as variáveis de ambiente
+
+Com o Docker devidamente instalado e funcionando, o proximo passo é preencher as variáveis de ambiente.
+
+> DICA: O ideal é ter um arquivo .env principal no projeto de onde as variáveis de ambiente são controladas e centralizadas. Jamais envie o arquivo .env com dados sensíveis (senhas, etc) para o seu repositório. Coloque-o sempre no arquivo .gitignore na raiz do projeto.
+
+6. Neste exemplo precisamos definir as configurações das variáveis de ambiente para os dois bancos dados (MySQ e PostgreSQL). Cada banco possui um arquivo .env separado.
+
+Na pasta `creational-patterns/factory` no arquivo `.env.my.example` ficam as variáveis de ambiente do MySQL.
 
 - MySQL
+  - MYSQL_TYPE=mysql
   - MYSQL_HOST=127.0.0.1
   - MYSQL_PORT=3306
-  - MYSQL_DB=mysql-db
-  - MYSQL_USER=your_user
-  - MYSQL_ROOT_PASSWORD=your_password
+  - MYSQL_DATABASE=your-db
+  - MYSQL_DB_USER=your-user
+  - MYSQL_DB_PASSWORD=your-password
+  - MYSQL_ROOT_PASSWORD=your-root-password
 
-* Postgres
+Na pasta `creational-patterns/factory` no arquivo `.env.pg.example` ficam as variáveis de ambiente do PostgreSQL.
+
+- Postgres
   - PG_TYPE=postgres
-  - PG_PORT=5432
   - PG_HOST=127.0.0.1
-  - POSTGRES_DB=postgres-db
-  - POSTGRES_USER=your_user
-  - POSTGRES_PASSWORD=your_password
+  - PG_PORT=5432
+  - POSTGRES_DB=your-db
+  - POSTGRES_USER=your-user
+  - POSTGRES_PASSWORD=your-password
 
-## Executando nosso container
+## Iniciando o Container
 
-Depois de tudo configurado precisamos dizer ao Docker para montar o nosso container com as ferramentas que definimos no arquivo docker-compose.yaml, então utilizamos o seguinte comando no console:
+Depois de tudo configurado precisamos dizer ao Docker para iniciar o nosso container com as configurações que definimos no arquivo `docker-compose.yml` e para isso utilizamos o seguinte comando no console:
 
-`docker-compose up -d`
+`yarn docker-start`
+
+Com isso teremos nosso container em pleno funcionamento!
+Para testar digitamos o seguinte comando em nosso console:
+
+`docker ps`
