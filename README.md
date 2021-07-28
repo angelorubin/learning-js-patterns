@@ -66,7 +66,7 @@ Neste exemplo de Factory Pattern eu abordo uma situação muito comum onde preci
 
 ## Verificando o funcionamento do container Docker
 
-Existe uma extensão para o VsCode que facilita a visualização do Docker. Ela pode ser encontrada [aqui]().
+Existe uma extensão para o VsCode que facilita a visualização do Docker. Ela pode ser encontrada [aqui](https://bit.ly/3rHAAcN).
 
 Você também pode visualizar pelo console com o eguinte comando:
 
