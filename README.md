@@ -44,13 +44,29 @@ Cada pasta contém diversas subpastas com o nome do padrão com tudo (node_modul
 
 Primeiramente clone ou baixe o projeto para o seu computador.
 
-Feito isso, basta entrar na pasta e conferir o(s) comando(s) (scripts) criado(s) no arquivo `package.json` e executá-lo através do console.
+Por exemplo para iniciar o factory pattern, entre na pasta do padrão, `cd project-path/creational-patterns/factory`, dentro da pasta digite o seguinte comando no console para instalar todos os pacotes necessários para o projeto:
+
+`yarn install`
+
+Feito isso, basta entrar na pasta e conferir o(s) script(s) criado(s) no arquivo `package.json` e executá-los através do console na seguinte ordem:
+
+Primero digite no console:
+
+`yarn docker-start` para iniciar o container com o MySQL, PostgreSQL e o Adminer.
+
+Após a instalação abra o navegador e digite na barra de endereços:
+
+localhost:8080
+
+E uma imagem como essa abaixo deve aparecer:
+
+![adminer](https://i.imgur.com/yt1YLLY.png)
 
 ## Exemplo de uso
 
 Abra o console de sua preferência e navegue até a pasta do design pattern desejado com o seguinte comando:
 
-`cd your-project-path/creational-patterns/factory`
+`cd project-path/creational-patterns/factory`
 
 Dentro da pasta observe que se (note que nem nem todos os exemplos necessitam) um arquivo chamado docker-compose.yml, caso exista é porque o exemplo necessita que seja instalado algumas ferramentas antes de poder ser executado.
 
