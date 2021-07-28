@@ -52,9 +52,11 @@ Feito isso, basta entrar na pasta e conferir o(s) script(s) criado(s) no arquivo
 
 Primero digite no console:
 
-`yarn docker-start` para iniciar o container com o MySQL, PostgreSQL e o Adminer.
+`yarn docker-start`
 
-Após a instalação abra o navegador e digite na barra de endereços:
+Para iniciar o container Docker com o MySQL, PostgreSQL e o Adminer.
+
+Após a instalação abra o navegador e digite na barra de endereço:
 
 localhost:8080
 
@@ -68,12 +70,12 @@ Abra o console de sua preferência e navegue até a pasta do design pattern dese
 
 `cd project-path/creational-patterns/factory`
 
-Dentro da pasta observe que se (note que nem nem todos os exemplos necessitam) um arquivo chamado docker-compose.yml, caso exista é porque o exemplo necessita que seja instalado algumas ferramentas antes de poder ser executado.
+Dentro da pasta observe que existe (note que nem nem todos os exemplos necessitarão) um arquivo chamado docker-compose.yml, caso exista é porque o exemplo necessita que seja instalado algumas ferramentas antes de poder ser executado.
 
 > É preciso ter o Docker instalado em seu computador, como já citado anteriormente.
 > Para saber como baixar, instalar e configurar o Docker, deixo um link com mais detalhes [aqui](https://docs.docker.com/get-docker).
 
-Neste exemplo em específico do padrão factory é necessário ter em nosso container Docker o banco de dados MySQL, o PostgreSQL e o painel Adminer.
+Neste exemplo em específico do factory pattern é necessário ter em nosso container Docker o banco de dados MySQL, o PostgreSQL e o painel Adminer.
 Todos eles serão disponibilizados através de apenas um container Docker.
 
 Caso queira saber mais sobre Docker e Conteinerização, deixo essa referência [aqui](https://www.meupositivo.com.br/panoramapositivo/container-docker).
@@ -84,7 +86,7 @@ Neste exemplo de Factory Pattern eu abordo uma situação muito comum onde preci
 
 Existe uma extensão para o VsCode que facilita a visualização do Docker. Ela pode ser encontrada [aqui](https://bit.ly/3rHAAcN).
 
-Você também pode visualizar pelo console com o eguinte comando:
+Você também pode visualizar pelo console com o seguinte comando:
 
 `docker ps`
 
@@ -92,13 +94,17 @@ Você deve ter um resultado semelhante a esse da imagem abaixo:
 
 ![docker ps](https://i.imgur.com/Jfp6D9T.png)
 
+Na imagem acima podemos notar cada parte criada de cada container: Container ID, Nome do Cntainer, Id da Imagem, Portas, etc.
+
 ## Configurando as variáveis de ambiente
 
 Com o Docker devidamente instalado e funcionando, o proximo passo é preencher as variáveis de ambiente.
 
 > DICA: O ideal é ter um arquivo .env principal no projeto de onde as variáveis de ambiente são controladas e centralizadas. Jamais envie o arquivo .env com dados sensíveis (senhas, etc) para o seu repositório. Coloque-o sempre no arquivo .gitignore na raiz do projeto.
 
-6. Neste exemplo precisamos definir as configurações das variáveis de ambiente para os dois bancos dados (MySQ e PostgreSQL). Cada banco possui um arquivo .env separado.
+6. Neste exemplo precisamos definir as configurações das variáveis de ambiente para os dois bancos dados (MySQ e PostgreSQL).
+
+> Cada banco possui um arquivo .env separado.
 
 Na pasta `creational-patterns/factory` no arquivo `.env.my.example` ficam as variáveis de ambiente do MySQL.
 
