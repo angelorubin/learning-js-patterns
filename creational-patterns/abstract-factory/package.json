@@ -1,0 +1,13 @@
+{
+	"name": "abstract-factory",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon src/index.mjs"
+	},
+	"dependencies": {
+		"nodemon": "^2.0.12"
+	}
+}
